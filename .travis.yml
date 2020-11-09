@@ -1,4 +1,9 @@
 language: c
+
+arch:
+ - amd
+ - ppc64le
+
 compiler:
 - clang
 - gcc
