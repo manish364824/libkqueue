@@ -1,7 +1,7 @@
 language: c
 
 arch:
- - amd
+ - amd64
  - ppc64le
 
 compiler:
