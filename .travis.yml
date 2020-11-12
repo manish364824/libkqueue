@@ -1,9 +1,4 @@
 language: c
-
-arch:
- - amd64
- - ppc64le
-
 compiler:
 - clang
 - gcc
@@ -17,6 +12,13 @@ env:
   matrix:
   - BUILD_TYPE=Release
   - BUILD_TYPE=Debug ENABLE_ASAN=YES ENABLE_LSAN=YES ENABLE_UBSAN=YES ASAN_OPTIONS="symbolize=1 detect_leaks=1 detect_stack_use_after_return=1" LSAN_OPTIONS="fast_unwind_on_malloc=0:malloc_context_size=50"
+  
+  #Add travis jobs on ppc64le
+  - BUILD_TYPE=Release
+  - arch: ppc64le
+  - BUILD_TYPE=Debug ENABLE_ASAN=YES ENABLE_LSAN=YES ENABLE_UBSAN=YES ASAN_OPTIONS="symbolize=1 detect_leaks=1 detect_stack_use_after_return=1" LSAN_OPTIONS="fast_unwind_on_malloc=0:malloc_context_size=50"
+  - arch: ppc64le
+
 addons:
   apt:
     config:
